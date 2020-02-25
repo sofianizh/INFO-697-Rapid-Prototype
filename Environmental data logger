@@ -1,0 +1,12 @@
+from microbit import *
+
+time = 6000
+interval = 1000
+compass.calibrate()
+
+with open('temp.csv', 'w') as my_file:
+    for num in range(0, time, interval):
+        temp = temperature()
+        compass = compass.heading()
+        my_file.write(compass, temp)
+        sleep(interval)
