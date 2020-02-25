@@ -1,0 +1,33 @@
+from microbit import *
+import random
+
+# Instruction
+display.scroll('Hello, if number is even press A; if number is odd press B')
+sleep(1000)
+
+# Generate random number
+num = random.randint(1, 9)
+display.show(num)
+
+while True:
+    if num % 2 == 0:
+        if button_a.was_pressed():
+            display.show(Image.HAPPY)
+            sleep(1000)
+            num = random.randint(1, 9)
+            display.show(num)
+            continue
+        if button_b.was_pressed():
+            display.show(Image.SAD)
+            sleep(1000)
+    else:
+        if button_b.was_pressed():
+            display.show(Image.HAPPY)
+            sleep(1000)
+            num = random.randint(1, 9)
+            display.show(num)
+            continue
+        if button_a.was_pressed():
+            display.show(Image.SAD)
+            sleep(1000)
+
