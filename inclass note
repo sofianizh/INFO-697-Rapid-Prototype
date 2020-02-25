@@ -1,0 +1,19 @@
+# Write your code here :-)
+from microbit import *
+import radio
+
+radio.on()
+radio.config(channel=7)
+
+while True:
+    if button_a.was_pressed():
+        display.show("S", delay=200)
+        radio.send("sn")
+        sleep(1000)
+        display.clear()
+        sleep(1000)
+    mymess = radio.receive()
+    if mymess:
+        display.show(mymess)
+        
+       
