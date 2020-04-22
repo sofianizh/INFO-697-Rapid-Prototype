@@ -13,6 +13,8 @@ while True:
         else:
             display.show(Image.SAD) #test
             pin1.write_digital(0) #Turn off the LED
-            sleep(100)
-    else: #Ultrasonic
-        if button_b.was_pressed():
+            sleep(100）
+    #the remainning part will be similar code of ultrasonic sensor
+    
+    #else: #Ultrasonic
+        #if button_b.was_pressed():
